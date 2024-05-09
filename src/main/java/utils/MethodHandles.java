@@ -47,6 +47,11 @@ public class MethodHandles {
         webElement(locator).sendKeys(text);
     }
 
+    protected String getText(By locator , int time){
+        explicitWait(locator,time);
+        return webElement(locator).getText();
+    }
+
     protected boolean isDisplayed(By locator,int time){
         explicitWait(locator,time);
         return webElement(locator).isDisplayed();
@@ -54,6 +59,8 @@ public class MethodHandles {
     public boolean barNotificationIsDisplayed(){
         return isDisplayed(barNotification,5);
     }
+
+
 
     protected void hoverOverElement(By locator,int time){
         explicitWait(locator,time);
