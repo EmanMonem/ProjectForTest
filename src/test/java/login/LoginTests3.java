@@ -1,18 +1,16 @@
 package login;
 
 import base.BaseTests;
-import data.DataModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import reader.ReadDataFromJson;
 
 import java.io.FileNotFoundException;
 
 import static org.testng.AssertJUnit.assertTrue;
 
-public class LoginTests extends BaseTests {
+public class LoginTests3 extends BaseTests {
 
     @Test
     public void testLoginSuccessfully() throws FileNotFoundException {
