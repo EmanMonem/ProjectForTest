@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="regression test suite" parallel="tests" thread-count="3">
-    <test name="Chrome" parallel="classes" thread-count="3">
-        <parameter name="browser" value="headlessChrome"/>
+<suite name="regression test suite" >
+    <test name="Chrome">
+        <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="login.LoginTests">
-               <methods>
+               <!--<methods>
                    <exclude name="t2"/>
-               </methods> 
+               </methods>-->
             </class>
-            <class name="login.LoginTests2">
+            <!--<class name="login.LoginTests2">
                 <methods>
                     <include name="t3"/>
                 </methods>
@@ -18,12 +18,12 @@
                 <methods>
                     <exclude name="t3"/>
                 </methods>
-            </class>
+            </class>-->
         </classes>
 
     </test>
 
-    <test name="Edge" parallel="classes" thread-count="3">
+   <!-- <test name="Edge" >
         <parameter name="browser" value="headlessEdge"/>
         <classes>
             <class name="login.LoginTests">
@@ -48,5 +48,5 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test>-->
 </suite>

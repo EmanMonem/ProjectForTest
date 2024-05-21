@@ -11,8 +11,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.*;
 import pages.HomePage;
 import reader.ReadDataFromJson;
+import utils.ScreenRecorderUtil;
+import utils.UtilsTests;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.Method;
 
 public class BaseTests {
 
@@ -21,16 +25,17 @@ public class BaseTests {
      EdgeOptions edgeOptions;
      FirefoxOptions firefoxOptions;
      protected DataModel dataModel;
-
      protected HomePage homePage;
+     UtilsTests utilsTests;
 
 
     @Parameters("browser")
     @BeforeClass
-    public void setup(String browser)  {
+    public String setup(String browser)  {
         setUpBrowser(browser);
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
+        return browser;
     }
 
     @Parameters("browser")
@@ -58,11 +63,16 @@ public class BaseTests {
     }
 
     @BeforeMethod
-    public void goHome() throws FileNotFoundException {
-
+    public void goHome(Method method) throws Exception {
+        ScreenRecorderUtil.startRecord(method.getName());
         driver.get(dataModel().URL);
-
-
+    }
+    @Parameters("browser")
+    @AfterMethod
+    public void afterMethod(String browser , Method method) throws Exception {
+        utilsTests = new UtilsTests(driver);
+        utilsTests.takeScreenShot(browser,method);
+        ScreenRecorderUtil.stopRecord();
     }
 
     @AfterClass

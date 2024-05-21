@@ -2,7 +2,7 @@
   "URL" : "https://demo.nopcommerce.com/" ,
   "Login" : {
     "ValidCredentials" : {
-      "Username" : "AAA",
+      "Username" : "AAA@gmail.com",
       "Password" : "123"
     },
     "InvalidCredentials" : {
