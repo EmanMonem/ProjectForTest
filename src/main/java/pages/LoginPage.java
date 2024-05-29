@@ -16,6 +16,8 @@ public class LoginPage extends MethodHandles {
 
     private final By loginButton = By.cssSelector(".button-1.login-button");
     private final By emailErrorMSG = By.id("Email-error");
+    private final By loginMSG = By.xpath("//*[@id=\"main\"]/div/div/div/div[2]/div[1]/div[2]/form/div[1]");
+   // private final By loginMSG = By.cssSelector(".message-error validation-summary-errors");
 
     private void insertEmail(String text){
         sendKeys(emailField,10,text);
@@ -35,6 +37,13 @@ public class LoginPage extends MethodHandles {
     }
     public boolean emailErrorMSGIsDisplayed(){
         return isDisplayed(emailErrorMSG,5);
+    }
+    public String getEmailValidation(){
+        return getText(emailErrorMSG,5);
+    }
+
+    public String getLoginValidation(){
+        return getText(loginMSG,5);
     }
 
 }

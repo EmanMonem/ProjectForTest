@@ -3,6 +3,7 @@ package login;
 import base.BaseTests;
 import data.DataModel;
 import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -10,7 +11,8 @@ import reader.ReadDataFromJson;
 
 import java.io.FileNotFoundException;
 
-import static org.testng.AssertJUnit.assertTrue;
+
+import static utils.UtilsTests.myAssertEquals;
 
 public class LoginTests extends BaseTests {
 
@@ -19,6 +21,8 @@ public class LoginTests extends BaseTests {
 
         LoginPage loginPage = homePage.clickOnLoginLink();
         loginPage.loginFeature(dataModel.Login.ValidCredentials.Username , dataModel.Login.ValidCredentials.Password);
+        myAssertEquals(loginPage.getLoginValidation(),"Login was unsuccessful. Please correct the errors and try again.\n" +
+               "No customer account found");
 
 
     }
