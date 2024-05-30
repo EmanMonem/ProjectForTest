@@ -21,8 +21,7 @@ public class LoginTests extends BaseTests {
 
         LoginPage loginPage = homePage.clickOnLoginLink();
         loginPage.loginFeature(dataModel.Login.ValidCredentials.Username , dataModel.Login.ValidCredentials.Password);
-        myAssertEquals(loginPage.getLoginValidation(),"Login was unsuccessful. Please correct the errors and try again.\n" +
-               "No customer account found");
+        myAssertEquals(loginPage.getLoginValidation(),dataModel().LoginValidation);
 
 
     }

@@ -1,27 +1,34 @@
 {
-  "URL" : "https://demo.nopcommerce.com/" ,
-  "Login" : {
-    "ValidCredentials" : {
-      "Username" : "AAA@gmail.com",
-      "Password" : "123"
+  "URL": "https://demo.nopcommerce.com/",
+  "Login": {
+    "ValidCredentials": {
+      "Username": "AAA@gmail.com",
+      "Password": "123"
     },
-    "InvalidCredentials" : {
-      "InvalidUsername" : {
-        "Username" : "BBB",
-        "Password" : "333"
-
+    "InvalidCredentials": {
+      "InvalidUsername": {
+        "Username": "BBB",
+        "Password": "333"
       },
-      "InvalidPassword" : {
-        "Username" : "ggg",
-        "Password" : "333 "
-
+      "InvalidPassword": {
+        "Username": "ggg",
+        "Password": "333 "
       }
-
     }
-  } ,
+  },
   "Login1": [
-    ["ahmed","123"],
-    ["mohamed","456"],
-    ["Ali","789"]
-  ]
+    [
+      "ahmed",
+      "123"
+    ],
+    [
+      "mohamed",
+      "456"
+    ],
+    [
+      "Ali",
+      "789"
+    ]
+  ],
+  "LoginValidation": "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found"
 }
